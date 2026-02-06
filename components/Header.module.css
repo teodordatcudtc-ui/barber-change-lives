@@ -1,0 +1,145 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg-dark);
+}
+.headerTop {
+  background: var(--bg-charcoal);
+  padding: 0.5rem var(--space-md);
+}
+.headerTopInner {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  font-size: var(--text-small);
+  color: var(--text-muted-light);
+}
+.headerWelcome {
+  margin-right: auto;
+}
+.headerSep {
+  opacity: 0.5;
+}
+.headerPhone,
+.headerEmail {
+  color: var(--text-on-dark);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.headerPhone:hover,
+.headerEmail:hover {
+  color: var(--accent-light);
+}
+.headerSocial {
+  display: flex;
+  gap: 0.75rem;
+}
+.headerSocial a {
+  color: var(--text-on-dark);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color var(--transition-fast);
+}
+.headerSocial a:hover {
+  color: var(--accent);
+}
+.headerMain {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.headerMainInner {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+.headerLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-on-dark);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.headerLogoIcon {
+  font-size: 1.5rem;
+}
+.headerMenuBtn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  background: none;
+  border: none;
+  color: var(--text-on-dark);
+  cursor: pointer;
+}
+.headerMenuBtn span {
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+}
+.headerNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--space-lg);
+}
+.headerNavList a {
+  color: var(--text-on-dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--text-small);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color var(--transition-fast);
+}
+.headerNavList a:hover,
+.headerNavList a.isActive {
+  color: var(--accent);
+}
+.headerCta {
+  margin-left: auto;
+}
+@media (max-width: 768px) {
+  .headerTop {
+    display: none;
+  }
+  .headerMenuBtn {
+    display: flex;
+  }
+  .headerNav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-charcoal);
+    padding: var(--space-md);
+    display: none;
+  }
+  .headerNav.isOpen {
+    display: block;
+  }
+  .headerNavList {
+    flex-direction: column;
+  }
+  .headerCta {
+    margin-left: 0;
+  }
+}
+@media (min-width: 769px) {
+  .headerNav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+  }
+}

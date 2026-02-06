@@ -1,0 +1,209 @@
+.section {
+  padding: var(--space-3xl) var(--space-md);
+}
+.sectionWelcome {
+  background: var(--bg-cream);
+}
+.welcomeInner {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+.welcomeMedia {
+  position: relative;
+}
+.welcomeImgWrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  aspect-ratio: 520/400;
+}
+.welcomeImgWrap :global(img) {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.welcomeShape {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  background: var(--accent-muted);
+  border-radius: 50%;
+  z-index: -1;
+}
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  font-weight: 700;
+  margin: 0 0 var(--space-md);
+  line-height: 1.2;
+  color: var(--text-on-light);
+}
+.sectionTitle .highlight {
+  color: var(--accent);
+}
+.welcomeContent p {
+  margin: 0 0 var(--space-sm);
+  color: var(--text-muted);
+  max-width: 32rem;
+}
+.welcomeContent :global(.btn-primary) {
+  margin-top: var(--space-md);
+}
+@media (max-width: 900px) {
+  .welcomeInner {
+    grid-template-columns: 1fr;
+  }
+  .welcomeMedia {
+    order: 1;
+  }
+}
+
+/* Services preview */
+.sectionTitleLight {
+  color: var(--text-on-dark);
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: 700;
+}
+.btnLight {
+  background: var(--text-on-dark);
+  color: var(--bg-dark);
+}
+.btnLight:hover {
+  background: var(--text-muted-light);
+}
+.sectionIntro {
+  color: var(--text-muted-light);
+  max-width: 36rem;
+  margin: 0 0 var(--space-xl);
+}
+.servicesPreviewInner {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+.servicesCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+.serviceCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  text-decoration: none;
+  color: var(--text-on-dark);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.serviceCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+}
+.serviceCardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-sm);
+  opacity: 0.9;
+  color: var(--accent-light);
+}
+.serviceCardIcon svg {
+  width: 2rem;
+  height: 2rem;
+}
+.serviceCard h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  margin: 0 0 0.5rem;
+}
+.serviceCard p {
+  margin: 0;
+  font-size: var(--text-small);
+  color: var(--text-muted-light);
+}
+@media (max-width: 768px) {
+  .servicesCards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* De ce noi */
+.sectionWhy {
+  background: var(--bg-offwhite);
+}
+.whyInner {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+.whyInner .sectionTitle {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+.whyCard {
+  padding: var(--space-lg);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  border-left: 3px solid var(--accent);
+}
+.whyNumber {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--text-small);
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+.whyCard h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  margin: 0 0 var(--space-sm);
+  color: var(--text-on-light);
+}
+.whyCard p {
+  margin: 0;
+  font-size: var(--text-small);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .whyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CTA */
+.sectionCta {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-md);
+}
+.ctaInner {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+.ctaTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: var(--text-on-dark);
+  margin: 0 0 var(--space-sm);
+}
+.ctaDesc {
+  color: var(--text-muted-light);
+  margin: 0 0 var(--space-lg);
+}

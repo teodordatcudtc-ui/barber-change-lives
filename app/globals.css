@@ -1,0 +1,270 @@
+/* Barber changes lives – Design system (anti-template) */
+:root {
+  /* Background principal */
+  --bg-dark: #0d0d0d;
+  --bg-charcoal: #1a1a1a;
+  --bg-cream: #f5f0e8;
+  --bg-offwhite: #faf8f5;
+
+  /* Accent principal – portocaliu/auriu */
+  --accent: #c85a28;
+  --accent-hover: #b84d1f;
+  --accent-light: #e8a87c;
+  --accent-muted: rgba(200, 90, 40, 0.15);
+
+  /* Accent secundar – roșu (stripe, tensiune) */
+  --accent-red: #c41e3a;
+  --accent-red-dark: #9e1830;
+
+  /* Text / neutral */
+  --text-on-dark: #f5f5f5;
+  --text-on-light: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --text-muted-light: #8a8a8a;
+
+  /* Highlight subtil */
+  --highlight-gold: rgba(212, 175, 55, 0.2);
+  --highlight-line: rgba(212, 175, 55, 0.4);
+
+  /* Spacing & rhythm (intentional asymmetry) */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+
+  /* Typography – titluri: puternice, body: curat */
+  --font-heading: "Syne", "Outfit", system-ui, sans-serif;
+  --font-body: "DM Sans", "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --text-hero: clamp(2.5rem, 6vw + 1rem, 4.5rem);
+  --text-h1: clamp(2rem, 4vw, 3rem);
+  --text-h2: clamp(1.5rem, 3vw, 2.25rem);
+  --text-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+
+  /* Depth & motion */
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --shadow-elevated: 0 24px 60px rgba(0, 0, 0, 0.18);
+  --radius-sm: 6px;
+  --radius-pill: 9999px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s var(--ease-out-expo);
+  --transition-medium: 0.4s var(--ease-out-expo);
+  --transition-slow: 0.6s var(--ease-out-expo);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--text-on-light);
+  background: var(--bg-offwhite);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus visible pentru accesibilitate */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Utility pentru skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-md);
+  z-index: 100;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--accent);
+  color: var(--text-on-dark);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: top var(--transition-fast);
+}
+.skip-link:focus {
+  top: var(--space-md);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Buton CTA principal */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-small);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-on-dark);
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+.btn-primary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Container asimetric – nu max-width egal peste tot */
+.container-narrow {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+.container-wide {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+.container-full {
+  width: 100%;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+/* Secțiuni – rupere de ritm */
+.section-dark {
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+}
+.section-cream {
+  background: var(--bg-cream);
+  color: var(--text-on-light);
+}
+.section-offwhite {
+  background: var(--bg-offwhite);
+  color: var(--text-on-light);
+}
+
+/* Page hero (reused on multiple pages) */
+.page-hero {
+  padding: var(--space-3xl) var(--space-md);
+  text-align: center;
+}
+.page-hero-inner {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+.page-hero-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  font-weight: 800;
+  color: var(--text-on-dark);
+  margin: 0 0 var(--space-sm);
+}
+.page-hero-desc {
+  color: var(--text-muted-light);
+  font-size: 1.1rem;
+  margin: 0;
+}
+.page-hero-price {
+  margin-top: var(--space-sm);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+/* CTA block (reused) */
+.section-cta {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-md);
+}
+.cta-inner {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+.cta-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: var(--text-on-dark);
+  margin: 0 0 var(--space-sm);
+}
+.cta-desc {
+  color: var(--text-muted-light);
+  margin: 0 0 var(--space-lg);
+}
+
+/* Legal pages */
+.legal-page {
+  padding: var(--space-2xl) var(--space-md);
+  background: var(--bg-offwhite);
+}
+.legal-inner {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+.legal-page h1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  margin: 0 0 0.5rem;
+  color: var(--text-on-light);
+}
+.legal-updated {
+  color: var(--text-muted);
+  font-size: var(--text-small);
+  margin: 0 0 var(--space-lg);
+}
+.legal-page h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  margin: var(--space-lg) 0 var(--space-sm);
+  color: var(--text-on-light);
+}
+.legal-page p {
+  margin: 0 0 var(--space-sm);
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+.legal-back {
+  margin-top: var(--space-xl);
+}
+.legal-back a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.legal-back a:hover {
+  text-decoration: underline;
+}

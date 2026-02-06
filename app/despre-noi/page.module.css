@@ -1,0 +1,121 @@
+.section {
+  padding: var(--space-2xl) var(--space-md);
+}
+.sectionStory {
+  background: var(--bg-cream);
+}
+.storyInner {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+.storyImgWrap {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  aspect-ratio: 560/400;
+}
+.storyImgWrap :global(img) {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  margin: 0 0 var(--space-md);
+  color: var(--text-on-light);
+}
+.storyContent p {
+  margin: 0 0 var(--space-sm);
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+@media (max-width: 900px) {
+  .storyInner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.teamInner {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+.sectionTitleCenter {
+  text-align: center;
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: var(--text-on-light);
+}
+.teamIntro {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 36rem;
+  margin: 0 auto var(--space-xl);
+}
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  justify-items: center;
+}
+.teamCard {
+  max-width: 280px;
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  padding-bottom: var(--space-md);
+}
+.teamCardPlaceholder {
+  aspect-ratio: 1;
+  background: var(--bg-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.teamCardInitials {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+.teamCard h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  margin: var(--space-sm) 0 0.15rem;
+  color: var(--text-on-light);
+}
+.teamRole {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 var(--space-xs) !important;
+}
+.teamDesc {
+  margin: 0 0 var(--space-sm) !important;
+  font-size: var(--text-small);
+  color: var(--text-muted);
+}
+.teamCard p {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--text-small);
+  color: var(--text-muted);
+}
+@media (max-width: 900px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+  .teamCard {
+    max-width: 320px;
+  }
+}
