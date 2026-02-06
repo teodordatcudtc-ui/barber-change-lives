@@ -45,19 +45,6 @@ export function Header() {
             <span className={styles.headerLogoText}>Barber changes lives</span>
           </Link>
 
-          <button
-            type="button"
-            className={styles.headerMenuBtn}
-            aria-expanded={menuOpen}
-            aria-controls="main-nav"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? "Închide meniul" : "Deschide meniul"}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-
           <nav
             id="main-nav"
             className={`${styles.headerNav} ${menuOpen ? styles.isOpen : ""}`}
@@ -91,6 +78,19 @@ export function Header() {
               <span className={styles.headerCtaText}>Programează-te</span>
             </Link>
           </div>
+
+          <button
+            type="button"
+            className={styles.headerMenuBtn}
+            aria-expanded={menuOpen}
+            aria-controls="main-nav"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Închide meniul" : "Deschide meniul"}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
         </div>
       </div>
     </header>
