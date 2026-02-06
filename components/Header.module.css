@@ -182,7 +182,7 @@
     flex-direction: column;
   }
   .headerCta {
-    margin-left: 0;
+    margin-left: auto;
   }
   .headerCtaBtn {
     padding: 0.5rem 0.6rem;
