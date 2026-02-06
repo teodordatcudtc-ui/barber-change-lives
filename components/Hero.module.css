@@ -120,14 +120,14 @@
 }
 @media (max-width: 900px) {
   .hero {
-    min-height: 85vh;
-    padding: var(--space-2xl) var(--space-md);
+    min-height: 62vh;
+    padding: var(--space-lg) var(--space-md);
   }
   .heroBg {
     display: none;
   }
-.heroMobileBg {
-  display: block;
+  .heroMobileBg {
+    display: block;
     position: absolute;
     inset: 0;
     z-index: 0;
@@ -146,7 +146,7 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.78);
     pointer-events: none;
   }
   .heroContent {

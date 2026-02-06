@@ -71,6 +71,36 @@
 .headerLogoIcon {
   font-size: 1.5rem;
 }
+.headerLogoText {
+  white-space: nowrap;
+}
+.headerCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-small);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-on-dark);
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+.headerCtaBtn:hover {
+  background: var(--accent-hover);
+}
+.headerCtaIcon {
+  display: none;
+}
+.headerCtaText {
+  display: inline;
+}
 .headerMenuBtn {
   display: none;
   flex-direction: column;
@@ -113,6 +143,26 @@
   .headerTop {
     display: none;
   }
+  .headerMain {
+    padding: 0.4rem var(--space-sm);
+  }
+  .headerMainInner {
+    gap: var(--space-sm);
+  }
+  .headerLogo {
+    font-size: 0.85rem;
+    gap: 0.35rem;
+    min-width: 0;
+  }
+  .headerLogoIcon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .headerLogoText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 8.5em;
+  }
   .headerMenuBtn {
     display: flex;
   }
@@ -133,6 +183,17 @@
   }
   .headerCta {
     margin-left: 0;
+  }
+  .headerCtaBtn {
+    padding: 0.5rem 0.6rem;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .headerCtaIcon {
+    display: block;
+  }
+  .headerCtaText {
+    display: none;
   }
 }
 @media (min-width: 769px) {
